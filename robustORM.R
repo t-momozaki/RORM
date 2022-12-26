@@ -1,11 +1,18 @@
-source("links.R")
+## Robust Ordinal Response Model via Divergence Approach
 
-# data = ordinal::wine
-# formula = rating~temp+contact
-# 
-# mf = model.frame(formula, data = data)
-# y = c(unclass(model.response(mf, "any")))
-# X = as.matrix(model.matrix(mf, data = data)[,-1])
+## INPUT
+# y (factor): an ordered categorical response vector
+# X (matrix): (n,p)-matrix of covariates without intercept term (n: total sample size; p: the number of covariates)
+# method (character): Name of link function to be used
+# divergence (character): Name of divergence to be used; "KL": Kullback-Liebler, "DP": Density-Power, "gamma": $\gamma$-divergence
+# tnp (numeric): the value of tuning parameter for DP and $\gamma$-divergences; defalt is 0.5
+# init_parameter (numeric): (p+M-1) vector of initial value of parameters; Input initial values for cutpoints for the first M-1 elements, and initial values for coefficients for the rest.
+
+## OUTPUT
+# (list): Estimates of coefficient parameters and cutoffs
+
+# source
+source("links.R")
 
 robustORM = function(y, X, method=c("probit", "logistic", "cloglog", "loglog"), 
                      divergence=c("KL", "DP", "gamma"), tnp, init_parameters) {
