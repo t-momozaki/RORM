@@ -6,7 +6,7 @@
 # method (character): Name of link function to be used
 # divergence (character): Name of divergence to be used; "KL": Kullback-Liebler, "DP": Density-Power, "gamma": $\gamma$-divergence
 # tnp (numeric): the value of tuning parameter for DP and $\gamma$-divergences; defalt is 0.5
-# init_parameter (numeric): (p+M-1) vector of initial value of parameters; Input initial values for cutpoints for the first M-1 elements, and initial values for coefficients for the rest.
+# init_parameters (numeric): (p+M-1) vector of initial value of parameters; Input initial values for cutpoints for the first M-1 elements, and initial values for coefficients for the rest.
 
 ## OUTPUT
 # (list): Estimates of coefficient parameters and cutoffs
