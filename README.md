@@ -1,4 +1,4 @@
-# Robust Ordinal Response Model via Divergence Approach
+# RORM: Robust Ordinal Response Model via Divergence Approach
 
 This repository provides the R code implementing the robust inference for the ordinal response model via the divergence approach, as proposed by the following paper.
 
